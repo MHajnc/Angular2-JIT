@@ -1,0 +1,23 @@
+<section class="event-detail" *ngIf="event">
+    <h3 class="event-detail__header">{{event.userName}} event details</h3>
+    <div class="event-detail__content">
+        <div class="event-detail__content__row">
+            <div class="event-detail__content__row__label">Date: </div>
+            <div class="event-detail__content__row__text">
+                {{event.occurredOn | date:'yyyy-MM-dd HH:mm:ss'}}
+            </div>
+        </div>
+        <div class="event-detail__content__row">
+            <div class="event-detail__content__row__label">User name: </div>
+            <div class="event-detail__content__row__text">
+                <input [(ngModel)]="event.userName" placeholder="name" />
+            </div>
+        </div>
+        <div class="event-detail__content__row">
+            <div class="event-detail__content__row__label">Event name: </div>
+            <div class="event-detail__content__row__text">
+                <input [(ngModel)]="event.name" placeholder="name" />
+            </div>
+        </div>
+    </div>
+</section>

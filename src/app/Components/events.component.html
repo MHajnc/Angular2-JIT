@@ -1,0 +1,20 @@
+<article>
+    <header>
+        <h2 class="article-title">Events list</h2>
+    </header>
+    <section class="events">
+        <ul class="events__list">
+            <li class="events__list__li" 
+                [class.events__list__li__selected] = "event === selectedEvent"
+                (click) = "onSelect(event)"
+                *ngFor = "let event of events; let idx = index"
+            >
+                <span class = "events__list__li__badge">{{ idx + 1 }}</span>
+                <span class="events__list__li__text">
+                    {{ event.userName }} ({{ event.name }})
+                </span>
+            </li>
+        </ul>
+    </section>
+    <event-detail [event]="selectedEvent"></event-detail>
+</article>

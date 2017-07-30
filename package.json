@@ -1,0 +1,45 @@
+{
+    "name": "angular-mhajnc-demo",
+    "version": "1.0.0",
+    "description": "Demo app by Mariusz Hajnc",
+    "author": "Mariusz Hajnc",
+    "license": "MIT",
+
+    "repository": { },
+
+    "scripts": {
+		"build": "tsc -p src/",
+        "build:watch": "tsc -p src/ -w",
+        "serve": "lite-server -c=bs-config.json",
+        "prestart": "npm run build:sass",
+        "start": "concurrently \"npm run watch:sass\" \"npm run build:watch\" \"npm run serve\"",
+        "build:sass": "node-sass src/assets/sass -o src/assets/css --output-style compressed",
+        "watch:sass": "node-sass src/assets/sass -wo src/assets/css --output-style compressed"
+    },
+
+    "dependencies": {
+        "@angular/common": "^4.0.0",
+        "@angular/compiler": "^4.0.0",
+        "@angular/core": "^4.0.0",
+        "@angular/forms": "^4.0.0",
+        "@angular/http": "^4.0.0",
+        "@angular/platform-browser": "^4.0.0",
+        "@angular/platform-browser-dynamic": "^4.0.0",
+        "@angular/router": "^4.0.0",
+        "angular-in-memory-web-api": "^0.3.1",
+        "systemjs": "^0.20.10",
+        "core-js": "^2.4.1",
+        "rxjs": "^5.2.0",
+        "zone.js": "^0.8.5",
+        "intl": "^1.2.5"
+    },
+
+    "devDependencies": {
+        "node-sass": "^4.5.1",
+        "concurrently": "^3.4.0",
+        "lite-server": "^2.3.0",
+        "typescript": "^2.2.1",
+        "canonical-path": "^0.0.2",
+        "@types/node": "^7.0.8"
+    }
+}
